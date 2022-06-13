@@ -22,9 +22,9 @@
         <div>
             <select name="genre" id="genre">
                 <option value="Rock">Rock</option>
-                <option value="Rock">Pop</option>
-                <option value="Rock">Jazz</option>
-                <option value="Rock">Metal</option>
+                <option value="Pop">Pop</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Metal">Metal</option>
             </select>
         </div>
     </header>

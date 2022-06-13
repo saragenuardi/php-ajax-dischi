@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="includes/css/style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap-grid.css'
+        integrity='sha512-VA/YQLfZ2JQlKs8s3wffXcOki/gvJsM9V2x7eSZ1cetjA43S9XeVWv0ZTjkW29zdlwnGzoIq+0OUErhHM38t1g=='
+        crossorigin='anonymous' />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.0/axios.js'
+        integrity='sha512-MNW6IbpNuZZ2VH9ngFhzh6cUt8L/0rSVa60F8L22K1H72ro4Ki3M/816eSDLnhICu7vwH/+/yb8oB3BtBLhMsA=='
+        crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.common.dev.js'
+        integrity='sha512-qRXBGtdrMm3Vdv+YXYud0bixlSfZuGz+FmD+vfXuezWYfw4m5Ov0O4liA6UAlKw2rh9MOYULxbhSFrQCsF1hgg=='
+        crossorigin='anonymous'></script>
+    <title>PHP DISCHI</title>
+</head>
+
+<body class="m-0">
+    <div id="root">
+        <header class="container-fluid d-flex align-items-center justify-content-between">
+            <div>
+                <img id="spotify-logo" class="grow" src="img/Spotify.png" alt="Spotify Logo">
+            </div>
+            <div>
+                <select name="genre" id="genre">
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Metal">Metal</option>
+                </select>
+            </div>
+        </header>
+        <main>
+            <div class="container">
+                <div id="discs-container" class="d-flex flex-wrap justify-content-center text-center">
+                    <div v-for="disc in discs" :key="disc.title"
+                        class="disc-card d-flex flex-column align-items-center">
+                        <div class="disc-poster grow">
+                            <img :src="disc.poster" :alt="disc.title">
+                        </div>
+                        <h3 class="text-white">{{ disc.title }}</h3>
+                        <div class="h5 text-gray">{{ disc.author }} </div>
+                        <small class="text-gray py-2">{{ disc.year }}</small>
+                        <strong class="text-gray">{{ disc.genre }}</strong>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+
+</html> 
